@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Configuration;
 using TAS.Common;
+using TAS.Database.Common.Interfaces;
 
 namespace TAS.Client.Config.Model
 {
@@ -74,6 +75,29 @@ namespace TAS.Client.Config.Model
         public int Instance { get; set; }
         public string UiLanguage { get; set; }
         public bool IsBackupInstance { get; set; }
+    }
+
+    public class AppUiSettings
+    {
+      private static int _attentionFontSize;
+      private static int _timeSpanFontSize;
+      private static int _mediaListNameFontSize;
+
+      static AppUiSettings()
+      {
+        if (!int.TryParse(ConfigurationManager.AppSettings["AttentionFontSize"], out _attentionFontSize))
+          _attentionFontSize = 14;
+        if (!int.TryParse(ConfigurationManager.AppSettings["TimecodeFontSize"], out _timeSpanFontSize))
+          _timeSpanFontSize = 14;
+        if (!int.TryParse(ConfigurationManager.AppSettings["MediaListNameFontSize"], out _mediaListNameFontSize))
+          _mediaListNameFontSize = 14;
+      }
+
+      public static int AttentionFontSize => _attentionFontSize;
+      public static int TimespanFontSize => _timeSpanFontSize;
+      public static int MediaListNameFontSize => _mediaListNameFontSize;
+
+      //public static AppUiSettings Current { get; } = new AppUiSettings();
     }
 
 }

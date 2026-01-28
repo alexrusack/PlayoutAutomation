@@ -10,8 +10,18 @@ namespace TAS.Client.Views
         public EventPanelRundownView()
         {
             InitializeComponent();
+            ApplySettings();
+            _resizer = new EventPanelResizer(mainGrid, lbOffset);
         }
-      
+        readonly EventPanelResizer _resizer;
+        void ApplySettings()
+        {
+            UISettings.Apply(lbTimeLeft);
+            UISettings.ApplyToEventTime(lbScheduleTime);
+            UISettings.ApplyToEventTime(lbOffset);
+            UISettings.ApplyToEventTime(lbDuration);
+            UISettings.ApplyToEventTime(lbEndTime);
+        }
     }
 
 }

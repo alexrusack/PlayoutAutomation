@@ -10,4 +10,9 @@
     <ProjectReference Include="..\TAS.Client.Common\TAS.Client.Common.csproj" />
     <ProjectReference Include="..\TAS.Common\TAS.Common.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Views\MediaManagerView.resx">
+      <Generator></Generator>
+    </EmbeddedResource>
+  </ItemGroup>
 </Project>
