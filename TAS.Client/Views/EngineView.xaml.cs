@@ -19,6 +19,10 @@ namespace TAS.Client.Views
         public EngineView()
         {
             InitializeComponent();
+            UISettings.Apply(lbAttentionTime, 5);
+            UISettings.Apply(lbNextRequiredTime, 4);
+            UISettings.Apply(lbNowPlayingName);
+            UISettings.Apply(lbNextToPlayName);
         }
 
         private void SidePanelResizer_DragDelta(object sender, DragDeltaEventArgs e)
@@ -44,7 +48,7 @@ namespace TAS.Client.Views
         {
             if (!(e.NewValue is ViewModels.EngineViewmodel vm))
                 return;
-            vm.View = (EngineView) sender;
+            vm.View = (EngineView)sender;
         }
     }
 }
