@@ -17,7 +17,6 @@
              d:DataContext="{d:DesignInstance vm:EventEditViewmodel}"
              BorderBrush="{DynamicResource {x:Static SystemColors.ControlDarkBrushKey }}"
              >
-    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
